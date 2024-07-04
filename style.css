@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: #f8f5f2;
+    font-family: 'Lora', 'Varela Round', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    font-smooth: always;
+    overflow-x: hidden;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Fade-in animation for body */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Navigation */
+nav {
+    font-family: 'Lora', 'Varela Round', sans-serif;
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+nav:hover {
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 20px;
+    height: 65px;
+}
+
+nav ul li {
+    padding: 0 12px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li:hover {
+    color: #ffd700;
+    transform: translateY(-3px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: white;
+    padding-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.brand:hover {
+    transform: scale(1.05);
+}
+
+.brand img {
+    width: 44px;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.brand img:hover {
+    transform: rotate(360deg);
+}
+
+/* Container */
+.container {
+    min-height: 70vh;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 23px auto;
+    border-radius: 12px;
+    padding: 34px;
+    background-image: url('bg.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Slide-in animation for container */
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Bottom Controls */
+.bottom {
+    position: sticky;
+    bottom: 0;
+    height: 130px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.5s ease-in-out;
+}
+
+/* Slide-up animation for bottom */
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.icons {
+    margin-top: 15px;
+}
+
+.icons i {
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+    color: #ffd700;
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    margin: auto;
+    padding: 10px 0;
+    animation: progressBarGrow 1s ease-in-out;
+}
+
+/* Grow animation for progress bar */
+@keyframes progressBarGrow {
+    from { width: 0; opacity: 0; }
+    to { width: 80vw; opacity: 1; }
+}
+
+#myProgressBar {
+    flex-grow: 1;
+    margin: 0 10px;
+    cursor: pointer;
+    appearance: none;
+    height: 5px;
+    background: linear-gradient(to right, #ffd700, #ff6347);
+    border-radius: 5px;
+    transition: background 0.3s ease, height 0.3s ease;
+}
+
+#myProgressBar:hover {
+    height: 7px;
+}
+
+#myProgressBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff6347;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#myProgressBar::-webkit-slider-thumb:hover {
+    background: #ffd700;
+    transform: scale(1.2);
+}
+
+#currentTime,
+#totalDuration {
+    color: white;
+    font-size: 14px;
+    padding: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#currentTime:hover,
+#totalDuration:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+/* Song Items */
+.songItemContainer {
+    margin-top: 34px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    margin: 12px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: zoomIn 0.8s ease-in-out;
+}
+
+/* Zoom-in animation for song items */
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.songItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.songItem img {
+    width: 43px;
+    margin: 0 23px;
+    border-radius: 24px;
+    transition: transform 0.3s ease;
+}
+
+.songItem img:hover {
+    transform: rotate(10deg);
+}
+
+.timestamp {
+    margin: 0 23px;
+    font-size: 14px;
+}
+
+.timestamp i {
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.timestamp i:hover {
+    color: #ff6347;
+    transform: rotate(15deg);
+}
+
+.songInfo {
+    font-family: 'Lora', 'Varela Round', sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.4s ease-in, transform 0.4s ease;
+}
+
+.songInfo img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Background animation */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.1));
+    pointer-events: none;
+    animation: backgroundMove 10s infinite linear;
+}
+
+/* Background animation movement */
+@keyframes backgroundMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .brand {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        padding: 8px 12px;
+    }
+
+    .songItem img {
+        width: 35px;
+    }
+
+    .songInfo {
+        left: 5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand {
+        font-size: 1rem;
+    }
+
+    .songItem {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .songItem img {
+        margin: 8px 0;
+    }
+}
+/* Existing CSS styles remain unchanged */
+
+.footer{
+    color: #f8f5f2;
+}
+.footer span {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    animation: colorPulse 2s infinite;
+}
+
+@keyframes colorPulse {
+    0%, 100% { color: white; }
+    50% { color: #ffd700; }
+}
+
+.footer span:hover {
+    transform: scale(1.05);
+}
+.footer {
+    display: flex;
+    justify-content: flex-end; /* Align children to the right */
+    align-items: center; /* Center children vertically */
+    height: 100%; /* Set a height */
+}
+
+/* Existing CSS remains unchanged */
+/* Existing CSS styles remain unchanged */
+
+/* Lyrics Container */
+.lyricsContainer {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto; /* Remove this line */
+    margin-top: 40px; /* Add this line to increase margin-top */
+    position: relative; /* Add this line */
+    z-index: 1; /* Add this line */
+}
+
+.lyricsContainer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#lyricsDisplay {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-height: 250px; /* Adjust height as needed */
+    overflow-y: auto;
+}
+
+#lyricsDisplay span {
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+#lyricsDisplay span.active {
+    color: #ffd700;
+}
+
+@media (max-width: 768px) {
+    .lyricsContainer {
+        max-width: 95%; /* Adjust max-width for responsiveness */
+    }
+}
+
+@media (max-width: 480px) {
+    .lyricsContainer {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
