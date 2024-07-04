@@ -386,6 +386,7 @@ masterPlay.addEventListener('click', () => {
         masterSongName.innerText = songs[songIndex].songName;
         audioElement.currentTime = 0;
         audioElement.play();
+        displayLyrics(songs[songIndex].lyrics);
         masterPlay.classList.remove("fa-circle-play");
         masterPlay.classList.add("fa-circle-pause");
         document.getElementById(`${songIndex}`).classList.remove('fa-circle-play');
